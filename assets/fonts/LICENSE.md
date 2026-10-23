@@ -1,0 +1,1 @@
+Newsreader (Production Type) and Instrument Sans (Rodrigo Fuenzalida / Instrument) are licensed under the SIL Open Font License 1.1 (https://openfontlicense.org). Files here are Latin subsets converted to WOFF2.
