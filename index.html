@@ -25,6 +25,7 @@
 <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="assets/img/portrait-640.webp" imagesrcset="assets/img/portrait-400.webp 400w, assets/img/portrait-640.webp 640w" imagesizes="(max-width: 560px) 190px, (max-width: 820px) 300px, 380px" type="image/webp">
 <link rel="preload" href="assets/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/site.css">
 </head>
@@ -70,19 +71,13 @@
         </div>
       </div>
 
-      <!--
-        PHOTO SLOT. To use a photo instead of the monogram:
-        1) add the image as assets/img/portrait.jpg (about 800×1000, 4:5 portrait)
-        2) replace the <div class="portrait__monogram"> block below with:
-           <img class="portrait__img" src="assets/img/portrait.jpg" alt="Portrait of Avinash Kumar" width="800" height="1000">
-      -->
-      <figure class="portrait" aria-hidden="true">
+      <!-- PHOTO: assets/img/portrait-640/-400 (.webp + .jpg fallback), 4:5. To revert to the monogram, see git history. -->
+      <figure class="portrait">
         <div class="portrait__frame">
-          <div class="portrait__monogram">
-            <span class="portrait__letters">A<span class="amp">K</span></span>
-            <span class="portrait__rule"></span>
-            <span class="portrait__caption">Insurance · Litigation · Commercial</span>
-          </div>
+          <picture>
+            <source type="image/webp" srcset="assets/img/portrait-400.webp 400w, assets/img/portrait-640.webp 640w" sizes="(max-width: 560px) 190px, (max-width: 820px) 300px, 380px">
+            <img class="portrait__img" src="assets/img/portrait-640.jpg" srcset="assets/img/portrait-400.jpg 400w, assets/img/portrait-640.jpg 640w" sizes="(max-width: 560px) 190px, (max-width: 820px) 300px, 380px" alt="Portrait of Avinash Kumar" width="640" height="800" loading="eager" fetchpriority="high" decoding="async">
+          </picture>
         </div>
       </figure>
     </div>
